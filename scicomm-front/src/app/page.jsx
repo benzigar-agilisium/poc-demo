@@ -98,6 +98,10 @@ export default function Page() {
   // }, [userAccount]);
 
   React.useEffect(() => {
+    fetchFolders();
+  }, []);
+
+  React.useEffect(() => {
     fetchFiles();
   }, [selectedFolder]);
 
