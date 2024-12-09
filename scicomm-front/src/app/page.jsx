@@ -45,7 +45,7 @@ export default function Page() {
 
   const [showAddContent, setShowAddContent] = React.useState(false);
 
-  const { userAccount, logout } = useAuth();
+  // const { userAccount, logout } = useAuth();
   const router = useRouter();
 
   useHotkeys(
@@ -90,12 +90,12 @@ export default function Page() {
     return folders?.find((e) => e.id === selectedFolder)?.name;
   };
 
-  React.useEffect(() => {
-    if (!userAccount) return router.replace("/login");
-    else {
-      fetchFolders();
-    }
-  }, [userAccount]);
+  // React.useEffect(() => {
+  //   if (!userAccount) return router.replace("/login");
+  //   else {
+  //     fetchFolders();
+  //   }
+  // }, [userAccount]);
 
   React.useEffect(() => {
     fetchFiles();
@@ -166,7 +166,7 @@ export default function Page() {
                   <CircleUserRound />
                 </div>
                 {!sidebarCollapsed && (
-                  <p className="text-sm text-nowrap">{userAccount?.name}</p>
+                  <p className="text-sm text-nowrap">Benzigar JS</p>
                 )}
               </div>
             </div>
@@ -218,7 +218,9 @@ export default function Page() {
               <p className={sidebarCollapsed ? "hidden" : "text-sm"}>Help</p>
             </div>
             <button
-              onClick={logout}
+              onClick={() => {
+                router.replace("/login");
+              }}
               className={clsx(
                 "hover:bg-[#0444838c] px-6 text-white flex gap-x-2 py-3 items-center",
                 sidebarCollapsed ? "justify-center" : ""

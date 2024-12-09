@@ -11,9 +11,9 @@ export default function Login() {
   const { userAccount, login, logout } = useAuth();
   const router = useRouter();
 
-  React.useEffect(() => {
-    if (userAccount) return router.replace("/");
-  }, [userAccount]);
+  // React.useEffect(() => {
+  //   if (userAccount) return router.replace("/");
+  // }, [userAccount]);
 
   return (
     <div className="flex flex-col h-screen justify-center items-center">
@@ -58,7 +58,9 @@ export default function Login() {
         <FadeInComponent delay={250}>
           <Link className="flex" href={"/"}>
             <button
-              onClick={login}
+              onClick={() => {
+                router.replace("/");
+              }}
               className="flex-1 bg-[#0163C4] hover:bg-blue-800 text-white px-3 py-3 rounded-md mt-5"
             >
               Sign in
