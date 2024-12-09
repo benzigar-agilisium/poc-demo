@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    ports:
+      - "3005:80"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - NODE_ENV=production
+
+      - DB_NAME=amgen-test
+      - DB_USER=first-db_owner
+      - DB_PASSWORD=nGyWA5TXa6se
+      - DB_HOST=ep-wandering-sea-a1fkb8o4.ap-southeast-1.aws.neon.tech
+
+      - AWS_ACCESS_KEY_ID=b6a23f6ddccac5ef013ad1659915ab37
+      - AWS_SECRET_ACCESS_KEY=d5ff555bdb693536c18fd56f2364c9fc087971d4a4d5499607aed019004b8bc3
+      - AWS_REGION=ap-south-1
+      - AWS_S3_BUCKET_NAME=public-bucket
+      - AWS_ENDPOINT=https://xygciufrmqfymscbvyqi.supabase.co/storage/v1/s3
+      - AWS_S3_PUBLIC_BASEURL=https://xygciufrmqfymscbvyqi.supabase.co/storage/v1/object/public/public-bucket/
+
+    restart: always
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

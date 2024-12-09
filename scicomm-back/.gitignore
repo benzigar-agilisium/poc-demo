@@ -1,0 +1,30 @@
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment directory
+venv/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# macOS system files
+.DS_Store
+
+# Byte-compiled files
+*.swp
+
+# IDE and editor-specific files
+.idea/
+.vscode/
+*.code-workspace
+
+# Pipenv and Poetry files (if used)
+Pipfile
+Pipfile.lock
+poetry.lock

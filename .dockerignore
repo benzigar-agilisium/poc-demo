@@ -1,0 +1,29 @@
+# Ignore node_modules
+scicomm-front/node_modules
+
+# Ignore Python environment and cache files
+scicomm-back/__pycache__
+scicomm-back/.pytest_cache
+scicomm-back/venv
+scicomm-back/out
+scicomm-back/.env
+
+# Ignore log files
+*.log
+
+# Ignore build and temporary files
+scicomm-front/.next
+scicomm-front/out
+scicomm-front/.git
+scicomm-front/.gitignore
+scicomm-back/.git
+scicomm-back/.gitignore
+
+# Ignore Dockerfile itself if not needed
+Dockerfile
+
+# Ignore any other unnecessary files or directories
+*.md
+*.yml
+*.yaml
+*.sh
